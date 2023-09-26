@@ -13,14 +13,14 @@ export default function Hp({hp,endGame}) {
         }
     }
     updateHearts();
-     
+
     if(hp === 0)
     endGame(); 
 
     const checkHeart = (heart) => {
         if (heart)
-            return "/public/heart.png"
-        else return "/public/empty-heart.png"
+            return "/heart.png"
+        else return "/empty-heart.png"
     }
     return (
         <div className="hearts">
