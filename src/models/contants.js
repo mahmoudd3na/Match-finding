@@ -1,13 +1,13 @@
 const clubs = [
-    {name : "Valencia",normalPic : "/public/valencia.png",shadowPic: "/public/shadow-valencia.png"},
-    {name : "Atletico Madrid",normalPic : "/public/atleticho-madrid.png",shadowPic: "/public/shadow-atleticho-madrid.png"},
-    {name : "Roma",normalPic : "/public/roma.png",shadowPic: "/public/shadow-roma.png"}, 
-    {name : "Newcastle United",normalPic : "/public/newcastle-united.png",shadowPic: "/public/shadow-newcastle-united.png"},
-    {name : "Eintracht Frankfurt",normalPic : "/public/frankfurt.png",shadowPic: "/public/shadow-frankfurt.png"},
-    {name : "AC Milan",normalPic : "/public/milan.png",shadowPic: "/public/shadow-milan.png"},
-    {name : "Real Scocidad",normalPic : "/public/real-socidad.png",shadowPic: "/public/shadow-real-socidad.png"},
-    {name : "Atlanta",normalPic : "/public/atlanta.png",shadowPic: "/public/shadow-atalanta.png"},
-    {name : "Lyon",normalPic : "/public/lyon.png",shadowPic: "/public/shadow-lyon.png"}
+    {name : "Valencia",normalPic : "../assets/valencia.png",shadowPic: "../assets/shadow-valencia.png"},
+    {name : "Atletico Madrid",normalPic : "../assets/atleticho-madrid.png",shadowPic: "../assets/shadow-atleticho-madrid.png"},
+    {name : "Roma",normalPic : "../assets/roma.png",shadowPic: "../assets/shadow-roma.png"}, 
+    {name : "Newcastle United",normalPic : "../assets/newcastle-united.png",shadowPic: "../assets/shadow-newcastle-united.png"},
+    {name : "Eintracht Frankfurt",normalPic : "../assets/frankfurt.png",shadowPic: "../assets/shadow-frankfurt.png"},
+    {name : "AC Milan",normalPic : "../assets/milan.png",shadowPic: "../assets/shadow-milan.png"},
+    {name : "Real Scocidad",normalPic : "../assets/real-socidad.png",shadowPic: "../assets/shadow-real-socidad.png"},
+    {name : "Atlanta",normalPic : "../assets/atlanta.png",shadowPic: "../assets/shadow-atalanta.png"},
+    {name : "Lyon",normalPic : "../assets/lyon.png",shadowPic: "../assets/shadow-lyon.png"}
 ]
 
 export default clubs; 
