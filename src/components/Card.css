@@ -1,0 +1,9 @@
+.card img{
+    height : 40vmin; 
+    width : 30vmin;
+}
+.card {
+    justify-content: center;
+    display: flex;
+   
+}

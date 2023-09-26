@@ -1,0 +1,14 @@
+.score {
+    margin: auto;
+    margin-left: auto; 
+    margin-right: 10vmin;  
+}
+
+.score p {
+    border :.5vmin solid #141E46; 
+    padding:1vmin 4vmin 1vmin 4vmin;
+    font-size: 6vmin;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 2px 2px 4px #888888, -2px -2px 4px #888888;
+    
+}

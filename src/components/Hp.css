@@ -1,0 +1,10 @@
+.hearts {
+    display: flex;
+    margin-top: 7vmin;
+    margin-left: 3vmin;
+}
+.hearts img {
+    height :6vmin; 
+    padding:1vmin 1vmin 1vmin 1vmin;
+    width : 6vmin; 
+}
