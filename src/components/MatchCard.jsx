@@ -31,7 +31,7 @@ export default function MatchCard() {
                 setRandom(i);
             }
         }
-        console.log(clubsRef.current[index].name); 
+        console.log(clubsRef.current[index].name);
         console.log(`this is ref ${clubsRef.current}`)
         clubsRef.current.splice(index, 1);
 
@@ -40,12 +40,13 @@ export default function MatchCard() {
 
 
     const handleClick = (answer) => {
+        if(result !== null) return
+
         if (answer) {
             incrementScore();
         }
         else decrementHp();
-
-        setNextButton(true); //only when we press the next button  
+            setNextButton(true); //only when we press the next button  
     }
     const incrementScore = () => {
         setScore(oldScore => {
@@ -59,6 +60,7 @@ export default function MatchCard() {
     }
     const endGame = () => {
         setResult(false);
+        setNextButton(false);
     }
     const youWon = () => {
         setResult(true);
@@ -79,7 +81,7 @@ export default function MatchCard() {
                 <Question randomClub={random} handleClick={handleClick} nextButton={nextButton} />
                 {result !== null && <p className="result-message">{result ? "You Won" : "You Lost"}</p>}
                 {result !== null && <Link to="/" className='start-again'><img src="/play-again2.png"></img></Link>}
-                {nextButton ? <div onClick={handleNext} className='next-icon' ><img src="/right-arrow.png"></img></div> : null}
+                {nextButton && score < 8 ? <div onClick={handleNext} className='next-icon' ><img src="/right-arrow.png"></img></div> : null}
             </div>
         </>
     )
