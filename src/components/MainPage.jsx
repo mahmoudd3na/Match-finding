@@ -7,7 +7,7 @@ export default function MainPage() {
     <div className='card-container-main'>
     <h1>Guess the logo of the Club</h1>
     <h1>You have three lifes</h1>
-    <Link to="/game">start game</Link>
+    <Link to="/game">Start Game</Link>
     </div>
   )
 }

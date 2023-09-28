@@ -1,10 +1,11 @@
 import React from 'react'
 import clubs from '../models/contants'
-import { useState } from 'react'
+import { useRef } from 'react'
 import "./Question.css"
 
 
-export default function Question({ randomClub, handleClick}) {
+export default function Question({ randomClub, handleClick, nextButton }) {
+    const myOptionsRef = useRef({ random: 20, options: [] });
 
     const options = [];
     const result = [];
@@ -16,7 +17,6 @@ export default function Question({ randomClub, handleClick}) {
             options.push(randomOption);
         }
     }
-    console.log(options);
     const chooseRandomOption = () => {
         let index = Math.floor(Math.random() * options.length);
         let option = options[index];
@@ -27,15 +27,45 @@ export default function Question({ randomClub, handleClick}) {
         result.push(chooseRandomOption());
         result.push(chooseRandomOption());
         result.push(chooseRandomOption());
+        if (randomClub !== myOptionsRef.current.random) {
+            myOptionsRef.current.options = [...result];
+            myOptionsRef.current.random = randomClub;
+        }
     }
     generateOptions();
-    console.log(result)
+
+    const handleAnswer = (event) => {
+        if (!nextButton) {
+            if (event.target.getAttribute("data-key") === clubs[randomClub].name) {
+                handleClick(true);
+            }
+            else handleClick(false);
+        }
+    }
+    const getRight = () => {
+        return {
+            backgroundColor: "#64de4f",
+            color: "#FFF5E0",
+
+        }
+    }
+    const getWrong = () => {
+        return {
+            backgroundColor: "#C70039",
+            color: "#FFF5E0",
+        }
+    }
 
     return (
         <>
             <ul className="options">
-                {result.map((option, index) => {
-                    return <li onClick={handleClick} key={index} data-key={clubs[option].name}>{clubs[option].name}</li>
+                {myOptionsRef.current.options.map((option, index) => {
+                    return <li
+                        onClick={handleAnswer}
+                        key={index}
+                        data-key={clubs[option].name}
+                        style={nextButton ? clubs[option].name === clubs[randomClub].name ? getRight() : getWrong() : null}
+                    >{clubs[option].name}</li>
                 })}
             </ul>
         </>
