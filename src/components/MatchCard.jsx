@@ -5,7 +5,7 @@ import Score from './Score'
 import clubs from '../models/contants'
 import Question from './Question'
 import { useState, useEffect, useRef } from 'react'
-import { Link, UNSAFE_DataRouterStateContext } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function MatchCard() {
     const [score, setScore] = useState(0);
@@ -31,22 +31,19 @@ export default function MatchCard() {
                 setRandom(i);
             }
         }
-        console.log(clubsRef.current[index].name);
-        console.log(`this is ref ${clubsRef.current}`)
         clubsRef.current.splice(index, 1);
-
     }
 
 
 
     const handleClick = (answer) => {
-        if(result !== null) return
+        if (result !== null) return
 
         if (answer) {
             incrementScore();
         }
         else decrementHp();
-            setNextButton(true); //only when we press the next button  
+        setNextButton(true); //only when we press the next button  
     }
     const incrementScore = () => {
         setScore(oldScore => {
@@ -59,14 +56,17 @@ export default function MatchCard() {
         })
     }
     const endGame = () => {
-        setResult(false);
-        setNextButton(false);
+        setTimeout(() => {
+            setResult(false);
+        }, 1000)
     }
     const youWon = () => {
-        setResult(true);
+        setTimeout(() => {
+            setResult(true);
+        }, 1000)
     }
     const handleNext = () => {
-        if (score < 8)
+        if (score < 8 && result === null && hp > 0)
             setNext(true);
     }
 
@@ -81,7 +81,7 @@ export default function MatchCard() {
                 <Question randomClub={random} handleClick={handleClick} nextButton={nextButton} />
                 {result !== null && <p className="result-message">{result ? "You Won" : "You Lost"}</p>}
                 {result !== null && <Link to="/" className='start-again'><img src="/play-again2.png"></img></Link>}
-                {nextButton && score < 8 ? <div onClick={handleNext} className='next-icon' ><img src="/right-arrow.png"></img></div> : null}
+                {nextButton && result === null ? <div  className='next-icon' ><img onClick={handleNext} src="/right-arrow.png"></img></div> : null}
             </div>
         </>
     )
