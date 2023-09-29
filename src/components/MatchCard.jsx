@@ -10,11 +10,11 @@ import { Link } from 'react-router-dom'
 export default function MatchCard() {
     const [score, setScore] = useState(0);
     const [hp, setHp] = useState(3);
-    const [result, setResult] = useState(null);
-    const [next, setNext] = useState(false);
-    const [nextButton, setNextButton] = useState(false);
+    const [result, setResult] = useState(null); // to declare the result win or lose
+    const [next, setNext] = useState(false); // to show the next question when next button clicked
+    const [nextButton, setNextButton] = useState(false); //to show the next button 
     const [random, setRandom] = useState(Math.floor(Math.random() * clubs.length));
-    const clubsRef = useRef([...clubs]);
+    const clubsRef = useRef([...clubs]); //to keep track of the clubs we showed to user
 
     useEffect(() => {
         if (next) {
