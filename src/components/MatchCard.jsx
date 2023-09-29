@@ -1,5 +1,5 @@
-import Hp from './Hp'
 import "./MatchCard.css"
+import Hp from './Hp'
 import Card from './Card'
 import Score from './Score'
 import clubs from '../models/contants'
@@ -58,12 +58,12 @@ export default function MatchCard() {
     const endGame = () => {
         setTimeout(() => {
             setResult(false);
-        }, 1000)
+        }, 800)
     }
     const youWon = () => {
         setTimeout(() => {
             setResult(true);
-        }, 1000)
+        }, 800)
     }
     const handleNext = () => {
         if (score < 8 && result === null && hp > 0)
@@ -81,7 +81,7 @@ export default function MatchCard() {
                 <Question randomClub={random} handleClick={handleClick} nextButton={nextButton} />
                 {result !== null && <p className="result-message">{result ? "You Won" : "You Lost"}</p>}
                 {result !== null && <Link to="/" className='start-again'><img src="/play-again2.png"></img></Link>}
-                {nextButton && result === null ? <div className='next-icon' ><img onClick={handleNext} src="/right-arrow.png"></img></div> : null}
+                {nextButton && hp > 0 && score < 8 ? <div className='next-icon' ><img onClick={handleNext} src="/right-arrow.png"></img></div> : null}
             </div>
         </>
     )
