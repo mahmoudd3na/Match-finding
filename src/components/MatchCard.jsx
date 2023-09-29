@@ -12,7 +12,7 @@ export default function MatchCard() {
     const [hp, setHp] = useState(3);
     const [result, setResult] = useState(null); // to declare the result win or lose
     const [next, setNext] = useState(false); // to show the next question when next button clicked
-    const [nextButton, setNextButton] = useState(false); //to show the next button 
+    const [nextButton, setNextButton] = useState(false); //to show the next button ... it represents the state of the app between the answer and the next question 
     const [random, setRandom] = useState(Math.floor(Math.random() * clubs.length));
     const clubsRef = useRef([...clubs]); //to keep track of the clubs we showed to user
 
@@ -81,7 +81,7 @@ export default function MatchCard() {
                 <Question randomClub={random} handleClick={handleClick} nextButton={nextButton} />
                 {result !== null && <p className="result-message">{result ? "You Won" : "You Lost"}</p>}
                 {result !== null && <Link to="/" className='start-again'><img src="/play-again2.png"></img></Link>}
-                {nextButton && result === null ? <div  className='next-icon' ><img onClick={handleNext} src="/right-arrow.png"></img></div> : null}
+                {nextButton && result === null ? <div className='next-icon' ><img onClick={handleNext} src="/right-arrow.png"></img></div> : null}
             </div>
         </>
     )

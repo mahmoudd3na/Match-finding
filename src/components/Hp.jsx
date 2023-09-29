@@ -1,8 +1,6 @@
 import React from 'react'
-import { useState} from 'react'
 import "./Hp.css"
 export default function Hp({hp,endGame}) {
-    // const [hp, setHp] = useState(3);
     const hearts = [];
     const updateHearts = () => {
         for (let i = 0; i < 3; i++) {

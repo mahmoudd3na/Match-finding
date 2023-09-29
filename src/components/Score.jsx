@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import "./Score.css"
 
 
 export default function Score({score,youWon}) {
-    // const [score, setScore] = useState(0);
 
 
     if(score === 8)
