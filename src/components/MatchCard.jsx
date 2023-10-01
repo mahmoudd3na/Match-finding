@@ -34,8 +34,6 @@ export default function MatchCard() {
         clubsRef.current.splice(index, 1);
     }
 
-
-
     const handleClick = (answer) => {
         if (result !== null) return
 
@@ -55,7 +53,7 @@ export default function MatchCard() {
             return oldHp - 1;
         })
     }
-    const endGame = () => {
+    const youLost = () => {
         setTimeout(() => {
             setResult(false);
         }, 800)
@@ -74,7 +72,7 @@ export default function MatchCard() {
         <>
             <div className='card-container'>
                 <div className='score-hp'>
-                    <Hp hp={hp} endGame={endGame} />
+                    <Hp hp={hp} youLost={youLost} />
                     <Score score={score} youWon={youWon} />
                 </div>
                 <Card randomClub={random} nextButton={nextButton} />

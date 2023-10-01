@@ -1,6 +1,6 @@
 import React from 'react'
 import "./Hp.css"
-export default function Hp({hp,endGame}) {
+export default function Hp({hp,youLost}) {
     const hearts = [];
     const updateHearts = () => {
         for (let i = 0; i < 3; i++) {
@@ -13,7 +13,7 @@ export default function Hp({hp,endGame}) {
     updateHearts();
 
     if(hp === 0)
-    endGame(); 
+    youLost(); 
 
     const checkHeart = (heart) => {
         if (heart)
