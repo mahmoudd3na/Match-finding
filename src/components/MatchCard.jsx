@@ -1,8 +1,8 @@
-import "./MatchCard.css"
+import "../styles/MatchCard.css"
 import Hp from './Hp'
 import Card from './Card'
 import Score from './Score'
-import clubs from '../models/contants'
+import clubs from '../models/constants'
 import Question from './Question'
 import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'

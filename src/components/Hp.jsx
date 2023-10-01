@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Hp.css"
+import "../styles/Hp.css"
 export default function Hp({hp,youLost}) {
     const hearts = [];
     const updateHearts = () => {

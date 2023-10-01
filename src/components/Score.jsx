@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Score.css"
+import "../styles/Score.css"
 
 
 export default function Score({score,youWon}) {

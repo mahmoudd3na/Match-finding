@@ -1,6 +1,6 @@
 import React from 'react'
-import clubs from '../models/contants'
-import "./Card.css"
+import clubs from '../models/constants'
+import "../styles/Card.css"
 
 export default function Card({ randomClub ,nextButton}) {
 

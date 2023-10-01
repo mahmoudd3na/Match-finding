@@ -1,7 +1,7 @@
 import React from 'react'
-import clubs from '../models/contants'
+import clubs from '../models/constants'
 import { useRef } from 'react'
-import "./Question.css"
+import "../styles/Question.css"
 
 
 export default function Question({ randomClub, handleClick, nextButton }) {
